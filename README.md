@@ -1,3 +1,12 @@
+#Instagram Filters for Android
+
+this is a image filter that like instagram。
+it is base on gpuimage。
+
+and the idea from the instagram filters for ios where is also use the gpuimage。
+
+the filter code is in the filter package in the sample model，you can copy it to your project。
+
 # GPUImage for Android
 
 Idea from: [iOS GPUImage framework](https://github.com/BradLarson/GPUImage)
@@ -7,70 +16,7 @@ Goal is to have something as similar to GPUImage as possible. Vertex and fragmen
 ## Requirements
 * Android 2.2 or higher (OpenGL ES 2.0)
 
-## Usage
 
-### Include in own project
-GPUImage can be used as a library project or by copying the following files/folders to your libs folder.
-
-* library/libs/armeabi (only needed for camera live preview)
-* library/bin/gpuimage.jar
-
-### Maven dependency
-
-    <dependency>
-      <groupId>jp.co.cyberagent.android.gpuimage</groupId>
-      <artifactId>gpuimage-library</artifactId>
-      <type>apklib</type>
-      <version>(use current version here)</version>
-    </dependency>
-
-If you want to use it with live camera preview, than you will need to add the following as well:
-
-    <dependency>
-      <groupId>jp.co.cyberagent.android.gpuimage</groupId>
-      <artifactId>gpuimage-library</artifactId>
-      <classifier>armeabi</classifier>
-      <type>so</type>
-      <version>(use current version here)</version>
-    </dependency>
-
-
-### Sample Code
-With preview:
-
-    @Override
-    public void onCreate(final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity);
-
-        Uri imageUri = ...;
-        mGPUImage = new GPUImage(this);
-        mGPUImage.setGLSurfaceView((GLSurfaceView) findViewById(R.id.surfaceView));
-        mGPUImage.setImage(imageUri); // this loads image on the current thread, should be run in a thread
-        mGPUImage.setFilter(new GPUImageSepiaFilter());
-
-        // Later when image should be saved saved:
-        mGPUImage.saveToPictures("GPUImage", "ImageWithFilter.jpg", null);
-    }
-
-Without preview:
-
-    Uri imageUri = ...;
-    mGPUImage = new GPUImage(context);
-    mGPUImage.setFilter(new GPUImageSobelEdgeDetection());
-    mGPUImage.setImage(imageUri);
-    mGPUImage.saveToPictures("GPUImage", "ImageWithFilter.jpg", null);
-
-## Create libs/armeabi
-Run the following command in the library folder. Make sure you have android-ndk in your PATH.
-
-    cd library
-    ndk-build
-
-### Maven
-Make sure that you run the clean target when using maven.
-
-    mvn clean install
 
 ## License
     Copyright 2012 CyberAgent
