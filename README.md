@@ -17,9 +17,20 @@ Goal is to have something as similar to GPUImage as possible. Vertex and fragmen
 * Android 2.2 or higher (OpenGL ES 2.0)
 
 
+## AboutMe
+
+一个Android开发者，热爱新技术，喜欢玩拍照。
+
+Weibo: [@码农明明桑](http://www.weibo.com/mingmingsang)
+
+Blog:  [http://blog.isming.me](http://blog.isming.me)
+
+ 会经常在博客分享一些个人的学习记录，欢迎你的关注
+
+
 
 ## License
-    Copyright 2012 CyberAgent
+    Copyright 2014 Isming.me
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
